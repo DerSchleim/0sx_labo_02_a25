@@ -18,33 +18,31 @@ void setup() {
 }
 
 void barre_progress(int potentiometerValue,int mappedIndex){
-  for(int i = 0; i < 4; i++){
-    switch(mappedIndex){
-      case 0 :
-        if (currentTime - serialPrevious >= serialDelay) {
-          serialPrevious = currentTime;
-          Serial.println("[#####...............] 25%");
-        }
-      break;
-      case 1 :
-        if (currentTime - serialPrevious >= serialDelay) {
-          serialPrevious = currentTime;
-          Serial.println("[##########..........] 50%");
-        }
-      break;
-      case 2 :
-        if (currentTime - serialPrevious >= serialDelay) {
-          serialPrevious = currentTime;
-          Serial.println("[###############.....] 75%");
-        }
-      break;
-      case 3 :
-        if (currentTime - serialPrevious >= serialDelay) {
-          serialPrevious = currentTime;
-          Serial.println("[####################] 100%");
-        }
-      break;
-    }
+  switch(mappedIndex){
+    case 0 :
+      if (currentTime - serialPrevious >= serialDelay) {
+        serialPrevious = currentTime;
+        Serial.println("[#####...............] 25%");
+      }
+    break;
+    case 1 :
+      if (currentTime - serialPrevious >= serialDelay) {
+        serialPrevious = currentTime;
+        Serial.println("[##########..........] 50%");
+       }
+    break;
+    case 2 :
+      if (currentTime - serialPrevious >= serialDelay) {
+        serialPrevious = currentTime;
+        Serial.println("[###############.....] 75%");
+      }
+    break;
+    case 3 :
+      if (currentTime - serialPrevious >= serialDelay) {
+        serialPrevious = currentTime;
+        Serial.println("[####################] 100%");
+       }
+    break;
   }
 }
 
